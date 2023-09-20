@@ -8,15 +8,16 @@ const PORT = 3000;
 
 //mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:37017/apiDB", {
-  useNewUrlParser: true,
-});
-// .then(() => {
-//   console.log("Connected to MongoDB");
-// })
-// .catch((err) => {
-//   console.error("Error connecting to MongoDB:", err);
-// });
+mongoose
+  .connect("mongodb://localhost:37017/apiDB", {
+    useNewUrlParser: true,
+  })
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err);
+  });
 
 // body parser setup
 app.use(bodyParser.urlencoded({ extended: true }));
